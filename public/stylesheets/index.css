@@ -1,0 +1,140 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*expense-tracker*/
+a {
+  text-decoration: none;
+}
+.nav-area {
+  height: 3rem;
+  background-color: #CCCCCC;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav-title {
+	font-weight: bold;
+	color: black;
+}
+.btn-logout {
+	color: #FF8C00;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-weight: bold;
+	background-color: white;
+	padding: 0.5rem 0.7rem;
+	transition: background-color 0.2s ease-out;
+}
+.btn-logout:hover {
+	background-color: #FF8C00;
+	color: white;
+}
+
+#category,
+.totalAmount,
+.record-content,
+.footer {
+	width: 30%;
+	min-width: 300px;
+}
+
+#category {
+	height: 2rem;
+}
+#category + p{
+	font-size: 2rem;
+}
+.totalAmount {
+	color: #FF8C00;
+	font-size: 5rem;
+	text-align: end;
+}
+.record-content {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+}
+.record-content i {
+	color: #87CEEB;
+}
+.record-detail {
+	margin-left: 1rem;
+}
+.record-content-head {
+	display: flex;
+	align-items: center;
+}
+.record-name, .record-price {
+	font-size: 1.5rem;
+}
+.records {
+	background-color: white;
+}
+.records li:nth-child(odd) .record-content{
+	background-color: #CCCCCC;
+}
+.record {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.create-record-button {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
+.content-area {
+	margin-left: 30%;
+}
+.record-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+body {
+	min-width: 800px;
+}
