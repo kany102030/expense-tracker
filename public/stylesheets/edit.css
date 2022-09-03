@@ -1,0 +1,19 @@
+.input-form-row {
+  width: 300px;
+  display: flex;
+  margin: 1rem auto;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.5rem;
+}
+
+.wrapper {
+  margin: auto;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: repeat(6, 3rem);
+  grid-gap: 10px;
+  align-items: center;
+  justify-content: center;
+}

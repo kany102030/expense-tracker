@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-router.use('/', (req, res) => {
-  res.render('index')
+router.get('/new', (req, res) => {
+  res.render('new', { scripts: ['/scripts/new.js'] })
 })
+
 module.exports = router
