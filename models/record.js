@@ -10,7 +10,7 @@ const recordSchema = new Schema({
     type: Date,
     required: true
   },
-  amounnt: {
+  amount: {
     type: Number,
     required: true
   },

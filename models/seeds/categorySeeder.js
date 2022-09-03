@@ -9,7 +9,16 @@ require('dotenv').config()
 const db = require('../../config/mongoose')
 const Category = require('../category')
 db.once('open', () => {
+  let uploadNum = 0
   for (let name in CATEGORY) {
     Category.create({ name, icon: CATEGORY[name] })
+      .then(() => {
+        uploadNum++
+        if (uploadNum === Object.keys(CATEGORY).length) {
+          console.log('category seed done')
+          process.exit(0)
+        }
+      })
+      .catch(error => console.log(error))
   }
 })
