@@ -12,6 +12,12 @@ router.get('/new', (req, res) => {
     .catch(error => console.log(error))
 
 })
+router.delete('/:id', (req, res) => {
+  Record.findById(req.params.id)
+    .then(record => record.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
 router.post('/', (req, res) => {
   const { record_name, record_date, record_category, record_price } = req.body
   Record.create({
