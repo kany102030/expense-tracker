@@ -57,7 +57,7 @@ a {
 	font-weight: bold;
 	color: black;
 }
-.btn-logout {
+.btn-logout, .btn-new {
 	color: #FF8C00;
 	border: 1px solid black;
 	border-radius: 5px;
@@ -66,7 +66,11 @@ a {
 	padding: 0.5rem 0.7rem;
 	transition: background-color 0.2s ease-out;
 }
-.btn-logout:hover {
+.btn-logout:hover  {
+	background-color: #FF8C00;
+	color: white;
+}
+.btn-new:hover {
 	background-color: #FF8C00;
 	color: white;
 }
