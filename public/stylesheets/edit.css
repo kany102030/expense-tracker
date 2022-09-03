@@ -1,12 +1,3 @@
-.input-form-row {
-  width: 300px;
-  display: flex;
-  margin: 1rem auto;
-  justify-content: space-between;
-  align-items: center;
-  height: 2.5rem;
-}
-
 .wrapper {
   margin: auto;
   width: 50%;
