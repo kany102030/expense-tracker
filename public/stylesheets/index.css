@@ -75,7 +75,7 @@ a {
 .totalAmount,
 .record-content,
 .footer {
-	width: 30%;
+	width: 40%;
 	min-width: 300px;
 }
 
@@ -138,4 +138,7 @@ a {
 }
 body {
 	min-width: 800px;
+}
+.record-content-head i {
+	min-width: 50px;
 }

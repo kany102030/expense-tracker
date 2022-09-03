@@ -9,87 +9,53 @@
 <section id="index-page">
   <div class="container mt-3">
     <div class="content-area">
-      <select class="mb-3" name="category" id="category">
+      <select class="mb-3" name="category" id="category" onchange="location=this.value">
+        {{#if categorySelected}}
+        <option value="?category={{categorySelected.name}}">{{categorySelected.name}}</option>
+        {{else}}
+        {{#if categoriesALL}}
+        {{else}}
         <option selected="none" selected disabled hidden>類別</option>
-        <option value="餐費">餐費</option>
+        {{/if}}
+        {{/if}}
+
+        {{#if categoriesALL}}
+        <option value="?category=ALL" selected>ALL</option>
+        {{else}}
+        <option value="?category=ALL">ALL</option>
+        {{/if}}
+        {{#each categoriesOther}}
+        <option value="?category={{this.name}}">{{this.name}}</option>
+        {{/each}}
       </select>
       <p>總金額：</p>
-      <div class="totalAmount ">25260</div>
+      <div class="totalAmount ">{{totalAmount}}</div>
 
       <div class="record-area">
         <ul class="records">
+          {{#each records}}
 
           <li class="record">
             <div class="record-content">
               <div class="record-content-head">
-                <i class="fa-solid fa-utensils fa-2xl"></i>
+                <i class="fa-{{this.iconStyle}} fa-{{this.iconName}} fa-2xl"></i>
                 <div class="record-detail">
-                  <h2 class="record-name">午餐</h2>
-                  <h4 class="record-time">2019/04/23</h4>
+                  <h2 class="record-name">{{this.name}}</h2>
+                  <h4 class="record-time">{{this.date}}</h4>
                 </div>
               </div>
-              <div class="record-price">60</div>
+              <div class="record-price">{{this.amount}}</div>
             </div>
 
             <div class="record-buttons">
               <a href="#" class="btn btn-info mx-3">修改</a>
-              <form action="/" method="post">
+              <form action="/delete" method="post">
                 <button class="btn btn-danger" type="submit">刪除</button>
               </form>
             </div>
-
           </li>
-          <div class="record-area">
-            <ul class="records">
+          {{/each}}
 
-              <li class="record">
-                <div class="record-content">
-                  <div class="record-content-head">
-                    <i class="fa-solid fa-utensils fa-2xl"></i>
-                    <div class="record-detail">
-                      <h2 class="record-name">午餐</h2>
-                      <h4 class="record-time">2019/04/23</h4>
-                    </div>
-                  </div>
-                  <div class="record-price">60</div>
-                </div>
-
-                <div class="record-buttons">
-                  <a href="#" class="btn btn-info mx-3">修改</a>
-                  <form action="/" method="post">
-                    <button class="btn btn-danger" type="submit">刪除</button>
-                  </form>
-                </div>
-
-              </li>
-              <div class="record-area">
-                <ul class="records">
-
-                  <li class="record">
-                    <div class="record-content">
-                      <div class="record-content-head">
-                        <i class="fa-solid fa-utensils fa-2xl"></i>
-                        <div class="record-detail">
-                          <h2 class="record-name">午餐</h2>
-                          <h4 class="record-time">2019/04/23</h4>
-                        </div>
-                      </div>
-                      <div class="record-price">60</div>
-                    </div>
-
-                    <div class="record-buttons">
-                      <a href="#" class="btn btn-info mx-3">修改</a>
-                      <form action="/" method="post">
-                        <button class="btn btn-danger" type="submit">刪除</button>
-                      </form>
-                    </div>
-
-                  </li>
-                </ul>
-              </div>
-              <div class="footer mt-3">
-                <a href="#" class="btn btn-primary create-record-button">新增支出</a>
-              </div>
-          </div>
       </div>
+
 </section>

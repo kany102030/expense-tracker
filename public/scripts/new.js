@@ -1,4 +1,3 @@
-
 Date.prototype.toDateInputValue = (function () {
   let local = new Date(this);
   // local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
