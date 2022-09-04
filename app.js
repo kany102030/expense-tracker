@@ -34,8 +34,8 @@ app.use((req, res, next) => {
 })
 
 app.use(routes)
-const port = process.env.PORT
+const PORT = process.env.PORT
 
-app.listen(port, () => {
-  console.log(`listening on http://localhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`listening on http://localhost:${PORT}`)
 })
