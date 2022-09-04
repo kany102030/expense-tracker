@@ -2,17 +2,19 @@ const express = require('express')
 const router = express.Router()
 const User = require('../../models/user')
 const bcrypt = require('bcryptjs')
+const passport = require('passport')
 router.get('/login', (req, res) => {
   res.render('login')
 })
-
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/users/login'
+}))
 router.get('/register', (req, res) => {
   res.render('register')
 })
 router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
-  console.log(req.body)
-
   const errors = []
 
   if (!name || !email || !password || !confirmPassword) {
@@ -35,11 +37,18 @@ router.post('/register', (req, res) => {
         .then(salt => bcrypt.hash(password, salt))
         .then(hash => User.create({ name, email, password: hash }))
         .then(() => {
-          // req.flash('success_msg', 'Register Success! Please Login.')
+          req.flash('success_msg', 'Register Success! Please Login.')
           res.redirect('/users/login')
         })
         .catch(error => console.log(error))
     })
     .catch(error => console.log(error))
+})
+router.get('/logout', function (req, res) {
+  req.logout(error => {
+    if (error) return next(error)
+    req.flash('success_msg', 'Logout Successfully')
+    res.redirect('/users/login')
+  })
 })
 module.exports = router
