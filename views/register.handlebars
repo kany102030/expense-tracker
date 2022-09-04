@@ -1,0 +1,37 @@
+<header>
+  <nav>
+    <div class="nav-area">
+      <a href="/" class="nav-title">家庭記帳本</a>
+      <div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="register-container">
+  <form action="/users/register" method="post">
+    <h1 class="text-center mt-3">Register</h1>
+    {{!-- {{> message}} --}}
+    <div class="input-form-row">
+      <label for="name">Name</label>
+      <input class="h-3rem" type="text" id="name" name="name" placeholder="Enter Name" value="{{name}}">
+    </div>
+    <div class=" input-form-row">
+      <label for="email">Email</label>
+      <input class="h-3rem" type="text" id="email" name="email" placeholder="Enter Email" value="{{email}}">
+    </div>
+    <div class="input-form-row">
+      <label for="password">Password</label>
+      <input class="h-3rem" type="password" id="password" name="password" placeholder="Enter Password"
+        value="{{password}}">
+    </div>
+    <div class="input-form-row">
+      <label for="confirmPassword">Confirm Password</label>
+      <input class="h-3rem" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password"
+        value="{{confirmPassword}}">
+    </div>
+    <button type="submit" class="btn btn-primary form-submit-button">Register</button>
+  </form>
+  <span>Have An Account?</span>
+  <a href="/users/login">Login</a>
+</div>

@@ -1,0 +1,14 @@
+.register-container, .login-container {
+  min-width: 30rem;
+  width: 50%;
+  margin: 3rem auto;
+}
+.input-form-row {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 1rem auto;
+  width: 100%;
+}
+.h-3rem {
+  height: 3rem;
+}

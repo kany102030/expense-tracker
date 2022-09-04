@@ -1,0 +1,27 @@
+<header>
+  <nav>
+    <div class="nav-area">
+      <a href="/" class="nav-title">家庭記帳本</a>
+      <div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="login-container">
+  <form action="#" method="post">
+    <h1 class="text-center mt-3">Login</h1>
+    {{!-- {{> message}} --}}
+    <div class="input-form-row">
+      <label for="email">Email</label>
+      <input class="h-3rem" type="text" id="email" name="email" placeholder="Enter Email">
+    </div>
+    <div class="input-form-row">
+      <label for="password">Password</label>
+      <input class="h-3rem" type="password" id="password" name="password" placeholder="Enter Password">
+    </div>
+    <button type="submit" class="btn btn-primary form-submit-button">Login</button>
+  </form>
+  <span>No Account?</span>
+  <a href="/users/register">Register</a>
+</div>
