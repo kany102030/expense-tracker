@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
 const Category = require('../../models/category')
+const user = require('../../models/user')
 router.get('/:id/edit', (req, res) => {
   Category.find()
     .lean()
@@ -55,6 +56,7 @@ router.post('/', (req, res) => {
     date: record_date,
     categoryId: record_category,
     amount: record_price,
+    userId: req.user._id
   })
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))

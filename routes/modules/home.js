@@ -15,8 +15,10 @@ router.use('/', (req, res) => {
       if (categorySelected) {
         searchCondiction['categoryId'] = categorySelected._id
       }
+      searchCondiction['userId'] = req.user._id
 
       categoriesOther = categories.filter(category => category.name !== inputCategory)
+
 
       Record.find(searchCondiction)
         .lean()
