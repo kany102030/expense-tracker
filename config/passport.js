@@ -11,6 +11,7 @@ module.exports = app => {
     User.findOne({ email })
       .then(user => {
         if (!user) {
+          req.flash('warning_msg', 'Email has not registered!')
           return done(null, false, { message: 'Email has not registered!' })
         }
 
