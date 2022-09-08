@@ -8,9 +8,10 @@ router.get('/:id/edit', (req, res) => {
     .lean()
     .then(categories => {
       Record.findById(req.params.id)
+        .populate('categoryId')
         .lean()
         .then(record => {
-          const categorySelected = categories.find(category => String(category._id) === String(record.categoryId))
+          const categorySelected = record.categoryId
           categoriesOther = categories.filter(category => category.name !== categorySelected.name)
           record.date = record.date.toJSON().slice(0, 10)
           res.render('edit', { record, categoriesOther, categorySelected })
@@ -18,7 +19,6 @@ router.get('/:id/edit', (req, res) => {
         .catch(error => console.log(error))
     })
     .catch(error => console.log(error))
-
 })
 router.get('/new', (req, res) => {
 
