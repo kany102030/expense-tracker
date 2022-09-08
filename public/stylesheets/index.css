@@ -146,3 +146,6 @@ body {
 .record-content-head i {
 	min-width: 50px;
 }
+#qqw {
+	-webkit-appearance:none;
+}

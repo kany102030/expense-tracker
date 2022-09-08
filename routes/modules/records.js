@@ -31,14 +31,14 @@ router.get('/new', (req, res) => {
 
 })
 router.put('/:id', (req, res) => {
-  const { record_name, record_date, record_category, record_price } = req.body
   Record.findById(req.params.id)
+    .lean()
     .then(record => {
-      record.name = record_name
-      record.date = record_date
-      record.categoryId = record_category
-      record.amount = record_price
-      return record.save()
+      record = {
+        ...record,
+        ...req.body
+      }
+      return Record.findOneAndUpdate({ _id: record._id }, record);
     })
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))

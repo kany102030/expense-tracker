@@ -15,23 +15,22 @@
       <p>*必填欄位</p>
       <p class="w-80 m-auto">請輸入你的支出</p>
 
-      <label for="record_name">名稱*:</label>
-      <input value="{{record.name}}" class="h-100" type="text" name="record_name" id="record_name" required>
+      <label for="name">名稱*:</label>
+      <input value="{{record.name}}" class="h-100" type="text" name="name" id="name" required>
 
-      <label for="record_date">日期*:</label>
-      <input value="{{record.date}}" class="record-date h-100" type="date" name="record_date" id="record_date">
+      <label for="date">日期*:</label>
+      <input value="{{record.date}}" class="record-date h-100" type="date" name="date" id="date">
 
-      <label for="record_category">類別*:</label>
-      <select class="h-100" name="record_category" id="record_category">
+      <label for="categoryId">類別*:</label>
+      <select class="h-100" name="categoryId" id="categoryId">
         <option value="{{categorySelected._id}}">{{categorySelected.name}}</option>
         {{#each categoriesOther}}
         <option value="{{this._id}}">{{this.name}}</option>
         {{/each}}
       </select>
 
-      <label for="record_price">金額*:</label>
-      <input value="{{record.amount}}" class="h-100 input-item" type="number" name="record_price" id="record_price"
-        required>
+      <label for="amount">金額*:</label>
+      <input value="{{record.amount}}" class="h-100 input-item" type="number" name="amount" id="amount" required>
 
       <div></div>
       <button type="submit" class="btn btn-primary h-100">送出</button>
