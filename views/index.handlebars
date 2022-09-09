@@ -16,17 +16,9 @@
       <select class="mb-3" name="category" id="category" onchange="location=this.value">
         {{#if categorySelected}}
         <option value="?category={{categorySelected.name}}">{{categorySelected.name}}</option>
-        {{else}}
-        {{#if categoriesALL}}
-        {{else}}
-        <option selected="none" selected disabled hidden>類別</option>
-        {{/if}}
-        {{/if}}
-
-        {{#if categoriesALL}}
-        <option value="?category=ALL" selected>ALL</option>
-        {{else}}
         <option value="?category=ALL">ALL</option>
+        {{else}}
+        <option value="?category=ALL" selected>ALL</option>
         {{/if}}
         {{#each categoriesOther}}
         <option value="?category={{this.name}}">{{this.name}}</option>
