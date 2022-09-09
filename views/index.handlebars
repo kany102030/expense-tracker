@@ -15,7 +15,7 @@
     <div class="content-area">
       <select class="mb-3" name="category" id="category" onchange="location=this.value">
         {{#if categorySelected}}
-        <option value="?category={{categorySelected.name}}">{{categorySelected.name}}</option>
+        <option value="?category={{categorySelected.name}}" selected>{{categorySelected.name}}</option>
         <option value="?category=ALL">ALL</option>
         {{else}}
         <option value="?category=ALL" selected>ALL</option>
