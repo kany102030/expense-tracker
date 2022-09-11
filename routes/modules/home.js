@@ -17,9 +17,6 @@ router.use('/', (req, res) => {
       }
       searchCondiction['userId'] = req.user._id
 
-      categoriesOther = categories.filter(category => category.name !== inputCategory)
-
-
       Record.find(searchCondiction)
         .lean()
         .then(records => {
@@ -34,11 +31,11 @@ router.use('/', (req, res) => {
             records[i]['iconStyle'] = iconInfo.iconStyle
             records[i].date = records[i].date.toJSON().slice(0, 10)
           }
-
-          if (inputCategory === "ALL") {
-            return res.render('index', { records, categoriesOther, categorySelected, totalAmount, categoriesALL: true })
+          categories.push({ name: 'ALL' })
+          if (!categorySelected) {
+            return res.render('index', { records, categories, categorySelected: { name: 'ALL' }, totalAmount })
           } else {
-            return res.render('index', { records, categoriesOther, categorySelected, totalAmount, categoriesALL: false })
+            return res.render('index', { records, categories, categorySelected, totalAmount })
           }
 
         })

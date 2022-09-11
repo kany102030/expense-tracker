@@ -10,8 +10,14 @@ const session = require('express-session')
 const usePassport = require('./config/passport')
 const flash = require('connect-flash')
 
-
-app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }))
+app.engine('handlebars', exphbs.engine({
+  defaultLayout: 'main',
+  helpers: {
+    ifEquals: function (a, b, options) {
+      return a === b ? options.fn(this) : options.inverse(this)
+    }
+  }
+}))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(session({

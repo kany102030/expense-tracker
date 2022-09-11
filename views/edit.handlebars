@@ -23,9 +23,8 @@
 
       <label for="categoryId">類別*:</label>
       <select class="h-100" name="categoryId" id="categoryId">
-        <option value="{{categorySelected._id}}">{{categorySelected.name}}</option>
-        {{#each categoriesOther}}
-        <option value="{{this._id}}">{{this.name}}</option>
+        {{#each categories}}
+        <option value="{{this._id}}" {{#ifEquals this.name ../record.categoryId.name}}selected{{/ifEquals}}>{{this.name}}</option>
         {{/each}}
       </select>
 

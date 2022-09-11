@@ -11,10 +11,8 @@ router.get('/:id/edit', (req, res) => {
         .populate('categoryId')
         .lean()
         .then(record => {
-          const categorySelected = record.categoryId
-          categoriesOther = categories.filter(category => category.name !== categorySelected.name)
           record.date = record.date.toJSON().slice(0, 10)
-          res.render('edit', { record, categoriesOther, categorySelected })
+          res.render('edit', { record, categories })
         })
         .catch(error => console.log(error))
     })
